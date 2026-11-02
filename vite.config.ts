@@ -12,4 +12,10 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  vite: {
+    // Pre-bundle up front so a mid-session re-optimization can't load a second React copy.
+    optimizeDeps: {
+      include: ["zustand", "zustand/middleware", "sonner", "lucide-react", "zod", "@radix-ui/react-dialog", "@radix-ui/react-label", "@radix-ui/react-slot"],
+    },
+  },
 });
