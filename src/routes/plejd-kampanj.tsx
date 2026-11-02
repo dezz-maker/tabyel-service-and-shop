@@ -58,7 +58,7 @@ function PlejdPage() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild variant="spark" size="lg"><a href="#paket">Se paketen</a></Button>
               <Button asChild size="lg" variant="outline" className="border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
-                <Link to="/offert" search={{ tjanst: "Smarta hem – Plejd" }}>Begär offert</Link>
+                <Link to="/offert" search={{ tjanst: "Smarta hem – Plejd" }}>Boka paket</Link>
               </Button>
             </div>
           </div>
@@ -98,7 +98,7 @@ function PlejdPage() {
                   ))}
                 </ul>
                 <div className="mt-8 flex flex-col gap-2">
-                  <Button asChild variant="spark"><Link to="/offert" search={{ tjanst: p.name }}>Begär offert</Link></Button>
+                  <Button asChild variant="spark"><Link to="/offert" search={{ tjanst: p.name }}>Boka paket</Link></Button>
                 </div>
               </div>
             ))}
