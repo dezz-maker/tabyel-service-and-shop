@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import logo from "@/assets/tabyel_logo.png.asset.json";
 import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu";
 
 const nav = [
   { to: "/tjanster", label: "Tjänster" },
@@ -10,6 +12,8 @@ const nav = [
   { to: "/faq", label: "FAQ" },
   { to: "/kontakt", label: "Kontakt" },
 ] as const;
+
+const mobileMenuPaths = new Set<string>(["/rot-gron-teknik", "/faq", "/plejd-kampanj"]);
 
 export function SiteHeader() {
   return (
@@ -31,12 +35,26 @@ export function SiteHeader() {
           </Button>
         </div>
       </div>
-      <nav className="flex justify-center gap-6 border-t py-2 text-sm md:hidden">
-        {nav.map((n) => (
-          <Link key={n.to} to={n.to} className="text-muted-foreground">
+      <nav aria-label="Mobilmeny" className="flex items-center justify-center gap-6 border-t px-4 py-2 text-sm md:hidden">
+        {nav.filter((n) => !mobileMenuPaths.has(n.to)).map((n) => (
+          <Link key={n.to} to={n.to} className="text-muted-foreground hover:text-foreground" activeProps={{ className: "text-foreground" }}>
             {n.label}
           </Link>
         ))}
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="ghost" size="icon" aria-label="Fler sidor" title="Fler sidor" className="shrink-0">
+              <Menu className="h-5 w-5" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="w-52 md:hidden">
+            {nav.filter((n) => mobileMenuPaths.has(n.to)).map((n) => (
+              <DropdownMenuItem key={n.to} asChild>
+                <Link to={n.to} className="min-h-11 cursor-pointer">{n.label}</Link>
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
       </nav>
     </header>
   );
