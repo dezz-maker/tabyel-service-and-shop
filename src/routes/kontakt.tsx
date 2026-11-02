@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { submitContact } from "@/lib/contact.functions";
-import van from "@/assets/tabyel_servicebil.jpg.asset.json";
+import van from "@/assets/tabyel-servicebil-proffsig.jpg";
 
 export const Route = createFileRoute("/kontakt")({
   head: () => ({
@@ -110,7 +110,7 @@ function Contact() {
               </div>
             </a>
           </div>
-          <img src={van.url} alt="TäbyEls servicebil" width={919} height={544} loading="lazy" className="aspect-[919/544] w-full object-cover" />
+          <img src={van} alt="TäbyEls vita servicebil med företagets blå och orange logga" width={1056} height={624} loading="lazy" className="aspect-[919/544] w-full object-cover" />
           <ul className="grid grid-cols-2 gap-4 p-6">
             {VALUES.map(({ icon: Icon, label }) => (
               <li key={label} className="flex items-center gap-3 font-display text-lg font-semibold">
