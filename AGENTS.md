@@ -12,3 +12,4 @@
 - Shopify storefront: products/cart come only from the Shopify Storefront API (src/lib/shopify.ts) with a Zustand cart; checkout always via cartCreate checkoutUrl. Why: real checkout, no mock products.
 - Booking and quote requests are stored in the `service_requests` table via a server function using the admin client; no public access. Why: every lead must reach the owner.
 - Company FAQ answers are shared through one data module and a reusable section across the FAQ, About and Contact pages. Why: company information stays consistent when answers change.
+- Service image mappings live in a shared browser-safe module for overview cards and detail pages, with card overrides when needed. Why: service photography remains consistent without duplicate imports.

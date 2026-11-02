@@ -3,29 +3,9 @@ import { CheckCircle2, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SERVICES } from "@/lib/services";
 import { SERVICE_DETAILS } from "@/lib/service-details";
-import imgEl from "@/assets/services/elinstallationer.jpg.asset.json";
-import imgSmart from "@/assets/services/smarta-hem.jpg.asset.json";
-import imgKontor from "@/assets/services/kontorsanpassning.jpg.asset.json";
-import imgCentral from "@/assets/services/elcentral.jpg";
-import imgLadd from "@/assets/services/laddbox.jpg";
-import imgFel from "@/assets/services/felsokning.jpg";
-import imgBelys from "@/assets/services/belysning.jpg";
-import imgUttag from "@/assets/services/uttag.jpg";
-import imgGolv from "@/assets/services/golvvarme.jpg";
-import imgBad from "@/assets/services/badrum.jpg";
-
-const IMAGES: Record<string, string> = {
-  elinstallationer: imgEl.url,
-  "smarta-hem": imgSmart.url,
-  kontorsanpassning: imgKontor.url,
-  elcentral: imgCentral,
-  laddbox: imgLadd,
-  felsokning: imgFel,
-  "belysning-spotlights": imgBelys,
-  "strombrytare-uttag": imgUttag,
-  golvvarme: imgGolv,
-  "elinstallation-badrum": imgBad,
-};
+import { SERVICE_IMAGES as IMAGES } from "@/lib/service-images";
+import teslaCharger from "@/assets/laddbox-tesla.png.asset.json";
+import chargerInstallation from "@/assets/laddbox-installation.png.asset.json";
 
 export const Route = createFileRoute("/tjanster_/$slug")({
   loader: ({ params }) => {
@@ -103,6 +83,15 @@ function ServicePage() {
           </ul>
         </div>
       </section>
+
+      {service.slug === "laddbox" && (
+        <section aria-label="Bilder på elbilsladdare" className="mx-auto max-w-6xl px-4 pb-14">
+          <div className="grid gap-6 sm:grid-cols-2">
+            <img src={teslaCharger.url} alt="Tesla laddbox monterad på tegelfasad med laddkabel" width={768} height={768} loading="lazy" className="aspect-square w-full rounded-lg object-contain" />
+            <img src={chargerInstallation.url} alt="Elektriker kontrollerar två installerade elbilsladdare med mobilen" width={768} height={768} loading="lazy" className="aspect-square w-full rounded-lg object-contain" />
+          </div>
+        </section>
+      )}
 
       <section className="bg-muted/50">
         <div className="mx-auto max-w-6xl px-4 py-14">
