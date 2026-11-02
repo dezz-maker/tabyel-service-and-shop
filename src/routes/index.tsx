@@ -1,24 +1,69 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight, CalendarCheck, FileText, ShoppingBag } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { SERVICES } from "@/lib/services";
+import hero from "@/assets/hero-electrician.jpg";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "TäbyEl – Behöriga elektriker i Stockholm" },
+      { name: "description", content: "Boka elektriker, begär offert eller handla elprodukter. TäbyEl hjälper hem och företag i hela Stockholm." },
+      { property: "og:title", content: "TäbyEl – Behöriga elektriker i Stockholm" },
+      { property: "og:description", content: "Boka elektriker, begär offert eller handla elprodukter online." },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <section className="bg-ink text-ink-foreground">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:grid-cols-2 md:py-24">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-widest text-spark">Elektriker i Stockholm</p>
+            <h1 className="mt-4 text-4xl font-bold leading-tight md:text-6xl">Trygg el. Snabbt på plats.</h1>
+            <p className="mt-5 max-w-md text-lg opacity-80">
+              Behöriga elektriker för hem, BRF och företag – från små reparationer till kompletta installationer.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Button asChild variant="spark" size="lg"><Link to="/boka">Boka tid <ArrowRight /></Link></Button>
+              <Button asChild variant="inkOutline" size="lg"><Link to="/offert">Begär offert</Link></Button>
+            </div>
+          </div>
+          <img src={hero} alt="Elektriker arbetar i elcentral" width={1600} height={1008} className="aspect-[4/3] w-full rounded-2xl object-cover" />
+        </div>
+      </section>
+
+      <section className="mx-auto grid max-w-6xl gap-4 px-4 py-12 md:grid-cols-3">
+        {[
+          { icon: CalendarCheck, title: "Enkel bokning", text: "Välj tjänst och dag – klart på en minut.", to: "/boka" as const },
+          { icon: FileText, title: "Offertförfrågan", text: "Beskriv projektet, få ett kostnadsförslag.", to: "/offert" as const },
+          { icon: ShoppingBag, title: "Produkter", text: "Smarta hem-paket och elprodukter.", to: "/butik" as const },
+        ].map(({ icon: Icon, ...c }) => (
+          <Link key={c.to} to={c.to} className="group rounded-xl border bg-card p-6 shadow-card transition hover:-translate-y-0.5">
+            <Icon className="h-6 w-6 text-primary" />
+            <h3 className="mt-4 text-lg font-semibold">{c.title}</h3>
+            <p className="mt-1 text-sm text-muted-foreground">{c.text}</p>
+          </Link>
+        ))}
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pb-16">
+        <div className="flex items-end justify-between">
+          <h2 className="text-3xl font-bold">Våra tjänster</h2>
+          <Link to="/tjanster" className="text-sm font-medium hover:underline">Se alla</Link>
+        </div>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {SERVICES.map((s) => (
+            <div key={s.slug} className="rounded-xl border-l-4 border-spark bg-card p-5">
+              <h3 className="font-semibold">{s.title}</h3>
+              <p className="mt-1 text-sm text-muted-foreground">{s.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </>
   );
 }

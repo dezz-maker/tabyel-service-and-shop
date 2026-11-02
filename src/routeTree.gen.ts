@@ -10,33 +10,91 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BokaRouteImport } from './routes/boka'
+import { Route as ButikRouteImport } from './routes/butik'
+import { Route as OffertRouteImport } from './routes/offert'
+import { Route as TjansterRouteImport } from './routes/tjanster'
+import { Route as ProductHandleRouteImport } from './routes/product.$handle'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BokaRoute = BokaRouteImport.update({
+  id: '/boka',
+  path: '/boka',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ButikRoute = ButikRouteImport.update({
+  id: '/butik',
+  path: '/butik',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OffertRoute = OffertRouteImport.update({
+  id: '/offert',
+  path: '/offert',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TjansterRoute = TjansterRouteImport.update({
+  id: '/tjanster',
+  path: '/tjanster',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductHandleRoute = ProductHandleRouteImport.update({
+  id: '/product/$handle',
+  path: '/product/$handle',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/boka': typeof BokaRoute
+  '/butik': typeof ButikRoute
+  '/offert': typeof OffertRoute
+  '/tjanster': typeof TjansterRoute
+  '/product/$handle': typeof ProductHandleRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/boka': typeof BokaRoute
+  '/butik': typeof ButikRoute
+  '/offert': typeof OffertRoute
+  '/tjanster': typeof TjansterRoute
+  '/product/$handle': typeof ProductHandleRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/boka': typeof BokaRoute
+  '/butik': typeof ButikRoute
+  '/offert': typeof OffertRoute
+  '/tjanster': typeof TjansterRoute
+  '/product/$handle': typeof ProductHandleRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    '/' | '/boka' | '/butik' | '/offert' | '/tjanster' | '/product/$handle'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/boka' | '/butik' | '/offert' | '/tjanster' | '/product/$handle'
+  id:
+    | '__root__'
+    | '/'
+    | '/boka'
+    | '/butik'
+    | '/offert'
+    | '/tjanster'
+    | '/product/$handle'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BokaRoute: typeof BokaRoute
+  ButikRoute: typeof ButikRoute
+  OffertRoute: typeof OffertRoute
+  TjansterRoute: typeof TjansterRoute
+  ProductHandleRoute: typeof ProductHandleRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +106,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/boka': {
+      id: '/boka'
+      path: '/boka'
+      fullPath: '/boka'
+      preLoaderRoute: typeof BokaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/butik': {
+      id: '/butik'
+      path: '/butik'
+      fullPath: '/butik'
+      preLoaderRoute: typeof ButikRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/offert': {
+      id: '/offert'
+      path: '/offert'
+      fullPath: '/offert'
+      preLoaderRoute: typeof OffertRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tjanster': {
+      id: '/tjanster'
+      path: '/tjanster'
+      fullPath: '/tjanster'
+      preLoaderRoute: typeof TjansterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/product/$handle': {
+      id: '/product/$handle'
+      path: '/product/$handle'
+      fullPath: '/product/$handle'
+      preLoaderRoute: typeof ProductHandleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BokaRoute: BokaRoute,
+  ButikRoute: ButikRoute,
+  OffertRoute: OffertRoute,
+  TjansterRoute: TjansterRoute,
+  ProductHandleRoute: ProductHandleRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
