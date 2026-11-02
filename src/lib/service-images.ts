@@ -23,4 +23,4 @@ export const SERVICE_IMAGES: Record<string, string> = {
   "elinstallation-badrum": bathroom,
 };
 
-export const SERVICE_CARD_IMAGES = { ...SERVICE_IMAGES, laddbox: installedCharger.url };
+export const SERVICE_CARD_IMAGES: Record<string, string> = { ...SERVICE_IMAGES, laddbox: installedCharger.url };

@@ -1,2 +1,2 @@
 - [x] Lägg till båda uppladdade bilderna på tjänstesidan för elbilsladdare.
-- [ ] Lägg till en passande bild i varje tjänsteruta på Tjänster och kontrollera resultatet.
+- [x] Lägg till en passande bild i varje tjänsteruta på Tjänster och kontrollera resultatet.
