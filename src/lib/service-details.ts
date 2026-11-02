@@ -11,8 +11,10 @@ export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
     seoTitle: "Elinstallationer i Täby & Stockholm – Behörig elektriker",
     description: "Behörig elektriker för elinstallationer i Täby och Stockholm. Nya uttag, belysning, dragningar och kompletta elsystem för hem och företag.",
     intro: [
-      "Behöver du fler uttag, ny belysning eller ett helt nytt elsystem? TäbyEl utför elinstallationer i villor, bostadsrätter, fritidshus och företagslokaler i Täby och Stockholmsområdet.",
-      "Alla arbeten görs av behöriga elektriker enligt gällande standarder, så att du får en säker installation som håller i många år.",
+      "Att elen fungerar som den ska är en självklarhet för de flesta – men bakom varje trygg installation ligger noggrann planering, rätt kunskap och behörighet.",
+      "Hos TäbyEl utför vi elinstallationer i bostäder, företag och fastigheter med fokus på säkerhet, kvalitet och lång hållbarhet.",
+      "Vi erbjuder professionella och säkra elinstallationer för både privatpersoner och företag. Oavsett om du behöver hjälp med nyinstallationer, renoveringar, eller service av befintliga elsystem, ser vi till att arbetet utförs enligt gällande standarder och regler. Våra certifierade elektriker har lång erfarenhet av allt från installation av belysning och eluttag till avancerade lösningar för fastighetsautomation.",
+      "Vi arbetar alltid med kvalitet och säkerhet i fokus för att skapa trygga och hållbara elinstallationer som möter dina behov. Kontakta oss för rådgivning eller en kostnadsfri offert!",
     ],
     includes: ["Nya eluttag och strömbrytare", "Inomhus- och utomhusbelysning", "Spotlights och LED-belysning", "Eldragning vid renovering och tillbyggnad", "Installation av vitvaror och spis"],
     faq: [
