@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { CheckCircle2, Loader2, Mail, Phone, ShieldCheck, Award, GraduationCap, HeartHandshake } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CompanyFaq } from "@/components/CompanyFaq";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,6 +16,8 @@ export const Route = createFileRoute("/kontakt")({
       { name: "description", content: "Boka elektriker eller få ett kostnadsförslag. Ring 08-792 17 31 eller maila info@tabyel.se." },
       { property: "og:title", content: "Kontakta oss – TäbyEl" },
       { property: "og:description", content: "Ring, maila eller skicka ett meddelande till TäbyEl." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Contact,
@@ -120,6 +123,7 @@ function Contact() {
           </ul>
         </div>
       </section>
+      <CompanyFaq />
     </>
   );
 }
