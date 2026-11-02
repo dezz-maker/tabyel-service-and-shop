@@ -14,6 +14,7 @@ import { Route as BokaRouteImport } from './routes/boka'
 import { Route as ButikRouteImport } from './routes/butik'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as OffertRouteImport } from './routes/offert'
+import { Route as OmOssRouteImport } from './routes/om-oss'
 import { Route as PlejdKampanjRouteImport } from './routes/plejd-kampanj'
 import { Route as RotGronTeknikRouteImport } from './routes/rot-gron-teknik'
 import { Route as TjansterRouteImport } from './routes/tjanster'
@@ -43,6 +44,11 @@ const KontaktRoute = KontaktRouteImport.update({
 const OffertRoute = OffertRouteImport.update({
   id: '/offert',
   path: '/offert',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OmOssRoute = OmOssRouteImport.update({
+  id: '/om-oss',
+  path: '/om-oss',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PlejdKampanjRoute = PlejdKampanjRouteImport.update({
@@ -77,6 +83,7 @@ export interface FileRoutesByFullPath {
   '/butik': typeof ButikRoute
   '/kontakt': typeof KontaktRoute
   '/offert': typeof OffertRoute
+  '/om-oss': typeof OmOssRoute
   '/plejd-kampanj': typeof PlejdKampanjRoute
   '/rot-gron-teknik': typeof RotGronTeknikRoute
   '/tjanster': typeof TjansterRoute
@@ -89,6 +96,7 @@ export interface FileRoutesByTo {
   '/butik': typeof ButikRoute
   '/kontakt': typeof KontaktRoute
   '/offert': typeof OffertRoute
+  '/om-oss': typeof OmOssRoute
   '/plejd-kampanj': typeof PlejdKampanjRoute
   '/rot-gron-teknik': typeof RotGronTeknikRoute
   '/tjanster': typeof TjansterRoute
@@ -102,6 +110,7 @@ export interface FileRoutesById {
   '/butik': typeof ButikRoute
   '/kontakt': typeof KontaktRoute
   '/offert': typeof OffertRoute
+  '/om-oss': typeof OmOssRoute
   '/plejd-kampanj': typeof PlejdKampanjRoute
   '/rot-gron-teknik': typeof RotGronTeknikRoute
   '/tjanster': typeof TjansterRoute
@@ -116,6 +125,7 @@ export interface FileRouteTypes {
     | '/butik'
     | '/kontakt'
     | '/offert'
+    | '/om-oss'
     | '/plejd-kampanj'
     | '/rot-gron-teknik'
     | '/tjanster'
@@ -128,6 +138,7 @@ export interface FileRouteTypes {
     | '/butik'
     | '/kontakt'
     | '/offert'
+    | '/om-oss'
     | '/plejd-kampanj'
     | '/rot-gron-teknik'
     | '/tjanster'
@@ -140,6 +151,7 @@ export interface FileRouteTypes {
     | '/butik'
     | '/kontakt'
     | '/offert'
+    | '/om-oss'
     | '/plejd-kampanj'
     | '/rot-gron-teknik'
     | '/tjanster'
@@ -153,6 +165,7 @@ export interface RootRouteChildren {
   ButikRoute: typeof ButikRoute
   KontaktRoute: typeof KontaktRoute
   OffertRoute: typeof OffertRoute
+  OmOssRoute: typeof OmOssRoute
   PlejdKampanjRoute: typeof PlejdKampanjRoute
   RotGronTeknikRoute: typeof RotGronTeknikRoute
   TjansterRoute: typeof TjansterRoute
@@ -195,6 +208,13 @@ declare module '@tanstack/react-router' {
       path: '/offert'
       fullPath: '/offert'
       preLoaderRoute: typeof OffertRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/om-oss': {
+      id: '/om-oss'
+      path: '/om-oss'
+      fullPath: '/om-oss'
+      preLoaderRoute: typeof OmOssRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/plejd-kampanj': {
@@ -241,6 +261,7 @@ const rootRouteChildren: RootRouteChildren = {
   ButikRoute: ButikRoute,
   KontaktRoute: KontaktRoute,
   OffertRoute: OffertRoute,
+  OmOssRoute: OmOssRoute,
   PlejdKampanjRoute: PlejdKampanjRoute,
   RotGronTeknikRoute: RotGronTeknikRoute,
   TjansterRoute: TjansterRoute,
