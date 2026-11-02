@@ -3,31 +3,9 @@ import { CheckCircle2, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SERVICES } from "@/lib/services";
 import { SERVICE_DETAILS } from "@/lib/service-details";
-import imgEl from "@/assets/services/elinstallationer.jpg.asset.json";
-import imgSmart from "@/assets/services/smarta-hem.jpg.asset.json";
-import imgKontor from "@/assets/services/kontorsanpassning.jpg.asset.json";
-import imgCentral from "@/assets/services/elcentral.jpg";
-import imgLadd from "@/assets/services/laddbox.jpg";
-import imgFel from "@/assets/services/felsokning.jpg";
-import imgBelys from "@/assets/services/belysning.jpg";
-import imgUttag from "@/assets/services/uttag.jpg";
-import imgGolv from "@/assets/services/golvvarme.jpg";
-import imgBad from "@/assets/services/badrum.jpg";
+import { SERVICE_IMAGES as IMAGES } from "@/lib/service-images";
 import teslaCharger from "@/assets/laddbox-tesla.png.asset.json";
 import chargerInstallation from "@/assets/laddbox-installation.png.asset.json";
-
-const IMAGES: Record<string, string> = {
-  elinstallationer: imgEl.url,
-  "smarta-hem": imgSmart.url,
-  kontorsanpassning: imgKontor.url,
-  elcentral: imgCentral,
-  laddbox: imgLadd,
-  felsokning: imgFel,
-  "belysning-spotlights": imgBelys,
-  "strombrytare-uttag": imgUttag,
-  golvvarme: imgGolv,
-  "elinstallation-badrum": imgBad,
-};
 
 export const Route = createFileRoute("/tjanster_/$slug")({
   loader: ({ params }) => {
