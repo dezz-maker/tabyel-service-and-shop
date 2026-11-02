@@ -11,6 +11,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Boka elektriker, begär offert eller handla elprodukter. TäbyEl hjälper hem och företag i hela Stockholm." },
       { property: "og:title", content: "TäbyEl – Behöriga elektriker i Stockholm" },
       { property: "og:description", content: "Boka elektriker, begär offert eller handla elprodukter online." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
@@ -57,9 +59,12 @@ function Index() {
         </div>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((s) => (
-            <div key={s.slug} className="rounded-xl border-l-4 border-spark bg-card p-5">
+            <div key={s.slug} className="flex flex-col rounded-xl border-l-4 border-spark bg-card p-5">
               <h3 className="font-semibold">{s.title}</h3>
-              <p className="mt-1 text-sm text-muted-foreground">{s.text}</p>
+              <p className="mt-1 flex-1 text-sm text-muted-foreground">{s.text}</p>
+              <Button asChild variant="outline" size="sm" className="mt-4 self-start">
+                <Link to="/tjanster/$slug" params={{ slug: s.slug }}>Läs mer <ArrowRight className="h-4 w-4" /></Link>
+              </Button>
             </div>
           ))}
         </div>
