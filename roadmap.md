@@ -1,2 +1,3 @@
 - [x] Lägg till båda uppladdade bilderna på tjänstesidan för elbilsladdare.
 - [x] Lägg till en passande bild i varje tjänsteruta på Tjänster och kontrollera resultatet.
+- [x] Byt bilden för Elcentral & säkringar under Tjänster till den redigerade bilden utan flagga och med TäbyEl-loggan på ryggen.
