@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, CalendarCheck, FileText, ShoppingBag } from "lucide-react";
+import { ArrowRight, CalendarCheck, FileText, ShoppingBag, Phone, Mail, Award, ShieldCheck, GraduationCap, LockKeyhole } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SERVICES } from "@/lib/services";
 import hero from "@/assets/tabyel-servicebil-startsida.jpg";
@@ -34,7 +34,29 @@ function Index() {
               <Button asChild variant="inkOutline" size="lg"><Link to="/tjanster">Våra tjänster</Link></Button>
             </div>
           </div>
-          <img src={hero} alt="TäbyEls vita servicebil med blå och orange logga" width={1600} height={1200} className="aspect-[4/3] w-full rounded-2xl object-cover" />
+          <div className="min-w-0">
+            <div className="mb-4 grid gap-4 sm:grid-cols-2">
+              <a href="tel:087921731" className="flex min-w-0 items-center gap-3 hover:underline">
+                <Phone className="h-5 w-5 shrink-0 text-spark" aria-hidden="true" />
+                <span><span className="block text-xs uppercase opacity-70">Ring oss</span><span className="font-semibold">08-792 17 31</span></span>
+              </a>
+              <a href="mailto:info@tabyel.se" className="flex min-w-0 items-center gap-3 hover:underline">
+                <Mail className="h-5 w-5 shrink-0 text-spark" aria-hidden="true" />
+                <span><span className="block text-xs uppercase opacity-70">Mejla oss</span><span className="font-semibold">info@tabyel.se</span></span>
+              </a>
+            </div>
+            <img src={hero} alt="TäbyEls vita servicebil med blå och orange logga" width={1600} height={1200} className="aspect-[4/3] w-full rounded-2xl object-cover" />
+            <ul className="mt-5 grid grid-cols-2 gap-x-4 gap-y-4 text-sm font-semibold">
+              {[
+                { icon: Award, label: "40+ års erfarenhet" },
+                { icon: ShieldCheck, label: "Trygghet" },
+                { icon: GraduationCap, label: "Kunskap" },
+                { icon: LockKeyhole, label: "Säkerhet" },
+              ].map(({ icon: Icon, label }) => (
+                <li key={label} className="flex items-center gap-2"><Icon className="h-5 w-5 shrink-0 text-spark" aria-hidden="true" /><span>{label}</span></li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
