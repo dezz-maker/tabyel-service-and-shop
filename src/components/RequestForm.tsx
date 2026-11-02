@@ -57,6 +57,7 @@ export function RequestForm({ type, defaultService }: { type: "booking" | "quote
           {SERVICES.map((s) => (
             <option key={s.slug} value={s.title}>{s.title}</option>
           ))}
+          <option value="Plejd-kampanj">Plejd-kampanj</option>
           <option value="Annat">Annat</option>
         </select>
       </div>
@@ -81,7 +82,7 @@ export function RequestForm({ type, defaultService }: { type: "booking" | "quote
       </div>
       {status === "error" && <p className="text-sm text-destructive sm:col-span-2">Något gick fel. Försök igen.</p>}
       <Button type="submit" variant="spark" size="lg" className="sm:col-span-2" disabled={status === "sending"}>
-        {status === "sending" ? <Loader2 className="h-4 w-4 animate-spin" /> : type === "booking" ? "Skicka bokning" : "Skicka offertförfrågan"}
+        {status === "sending" ? <Loader2 className="h-4 w-4 animate-spin" /> : type === "booking" ? "Skicka bokning" : "Skicka in"}
       </Button>
     </form>
   );

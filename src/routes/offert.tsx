@@ -9,6 +9,8 @@ export const Route = createFileRoute("/offert")({
       { name: "description", content: "Beskriv ditt elprojekt och få ett kostnadsförslag från TäbyEl." },
       { property: "og:title", content: "Begär offert – TäbyEl" },
       { property: "og:description", content: "Kostnadsfri offertförfrågan för elarbeten." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Quote,
