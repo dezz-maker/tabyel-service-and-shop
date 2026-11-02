@@ -7,6 +7,7 @@ const nav = [
   { to: "/plejd-kampanj", label: "Plejd-kampanj" },
   { to: "/om-oss", label: "Om oss" },
   { to: "/rot-gron-teknik", label: "ROT & Grön teknik" },
+  { to: "/faq", label: "FAQ" },
   { to: "/kontakt", label: "Kontakt" },
 ] as const;
 
