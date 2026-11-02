@@ -45,22 +45,22 @@
   --card-foreground: oklch(0.2 0.04 260);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.2 0.04 260);
-  --primary: oklch(0.26 0.06 260);
+  --primary: oklch(0.42 0.15 262);
   --primary-foreground: oklch(0.98 0.005 85);
   --secondary: oklch(0.95 0.01 85);
-  --secondary-foreground: oklch(0.26 0.06 260);
+  --secondary-foreground: oklch(0.42 0.15 262);
   --muted: oklch(0.95 0.01 85);
   --muted-foreground: oklch(0.48 0.03 260);
-  --accent: oklch(0.86 0.17 92);
-  --accent-foreground: oklch(0.22 0.05 260);
+  --accent: oklch(0.7 0.18 58);
+  --accent-foreground: oklch(0.99 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(0.9 0.01 85);
   --input: oklch(0.88 0.01 85);
-  --ring: oklch(0.86 0.17 92);
+  --ring: oklch(0.7 0.18 58);
   --ink: oklch(0.2 0.05 262);
   --ink-foreground: oklch(0.97 0.01 85);
-  --spark: oklch(0.86 0.17 92);
+  --spark: oklch(0.7 0.18 58);
   --spark-foreground: oklch(0.2 0.05 262);
   --shadow-card: 0 18px 40px -24px color-mix(in oklab, var(--ink) 45%, transparent);
 }
