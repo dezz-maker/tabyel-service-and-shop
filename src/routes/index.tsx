@@ -60,8 +60,9 @@ function Index() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl gap-4 px-4 py-12 md:grid-cols-2">
+      <section className="mx-auto grid max-w-6xl gap-4 px-4 py-12 md:grid-cols-3">
         {[
+          { icon: ShieldCheck, title: "Elsäkerhet & tips", text: "Råd och kunskap för ett elsäkert hem.", to: "/artiklar" as const },
           { icon: FileText, title: "Offertförfrågan", text: "Beskriv projektet, få ett kostnadsförslag.", to: "/offert" as const },
           { icon: ShoppingBag, title: "Plejd-kampanj", text: "Smarta hem-paket installerat och klart.", to: "/plejd-kampanj" as const },
         ].map(({ icon: Icon, ...c }) => (
