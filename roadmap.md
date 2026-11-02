@@ -2,4 +2,4 @@
 - [x] Lägg till en passande bild i varje tjänsteruta på Tjänster och kontrollera resultatet.
 - [x] Byt bilden för Elcentral & säkringar under Tjänster till den redigerade bilden utan flagga och med TäbyEl-loggan på ryggen.
 - [x] Använd den förbättrade servicebilsbilden på alla sidor där den gamla förekommer.
-- [ ] Skapa sex SEO-artiklar med elsäkerhetsråd, källor och en länkad artikelöversikt.
+- [x] Skapa sex SEO-artiklar med elsäkerhetsråd, källor och en länkad artikelöversikt.
