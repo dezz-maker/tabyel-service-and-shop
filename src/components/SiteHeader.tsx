@@ -71,7 +71,13 @@ export function SiteFooter() {
           <p className="mt-2 text-sm opacity-70">Behöriga elektriker i hela Stockholmsområdet.</p>
         </div>
         <div className="text-sm opacity-80">
-          <p className="font-semibold">Vi finns nära</p>
+          <p className="font-semibold">Kontakta TäbyEl</p>
+          <address className="mt-2 flex flex-col gap-2 not-italic">
+            <a href="tel:087921731" className="w-fit hover:underline">08-792 17 31</a>
+            <a href="mailto:info@tabyel.se" className="w-fit hover:underline">info@tabyel.se</a>
+            <p>Ljungmyrsvägen 4<br />187 46 Täby</p>
+          </address>
+          <p className="mt-6 font-semibold">Vi finns nära</p>
           <p className="mt-2">Täby, Sollentuna, Danderyd, Åkersberga, Vallentuna, Upplands Väsby, Järfälla</p>
         </div>
         <div className="flex flex-col gap-2 text-sm">
