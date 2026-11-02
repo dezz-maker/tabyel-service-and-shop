@@ -98,8 +98,7 @@ function PlejdPage() {
                   ))}
                 </ul>
                 <div className="mt-8 flex flex-col gap-2">
-                  <Button asChild variant="spark"><Link to="/butik">Köp paketet</Link></Button>
-                  <Button asChild variant="outline"><Link to="/offert" search={{ tjanst: p.name }}>Begär offert</Link></Button>
+                  <Button asChild variant="spark"><Link to="/offert" search={{ tjanst: p.name }}>Begär offert</Link></Button>
                 </div>
               </div>
             ))}

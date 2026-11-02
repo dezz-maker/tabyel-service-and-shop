@@ -1,12 +1,11 @@
 import { Link } from "@tanstack/react-router";
 import logo from "@/assets/tabyel_logo.png.asset.json";
-import { CartDrawer } from "./CartDrawer";
 import { Button } from "@/components/ui/button";
 
 const nav = [
   { to: "/tjanster", label: "Tjänster" },
   { to: "/plejd-kampanj", label: "Plejd-kampanj" },
-  { to: "/butik", label: "Butik" },
+  { to: "/om-oss", label: "Om oss" },
   { to: "/rot-gron-teknik", label: "ROT & Grön teknik" },
   { to: "/offert", label: "Offert" },
   { to: "/kontakt", label: "Kontakt" },
@@ -30,7 +29,6 @@ export function SiteHeader() {
           <Button asChild variant="spark" size="sm">
             <Link to="/boka">Boka elektriker</Link>
           </Button>
-          <CartDrawer />
         </div>
       </div>
       <nav className="flex justify-center gap-6 border-t py-2 text-sm md:hidden">
@@ -59,7 +57,7 @@ export function SiteFooter() {
         <div className="flex flex-col gap-2 text-sm">
           <Link to="/boka" className="hover:underline">Boka tid</Link>
           <Link to="/offert" className="hover:underline">Begär offert</Link>
-          <Link to="/butik" className="hover:underline">Butik</Link>
+          <Link to="/om-oss" className="hover:underline">Om oss</Link>
           <Link to="/kontakt" className="hover:underline">Kontakt</Link>
         </div>
       </div>

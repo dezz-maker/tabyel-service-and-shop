@@ -40,7 +40,7 @@ function Index() {
         {[
           { icon: CalendarCheck, title: "Enkel bokning", text: "Välj tjänst och dag – klart på en minut.", to: "/boka" as const },
           { icon: FileText, title: "Offertförfrågan", text: "Beskriv projektet, få ett kostnadsförslag.", to: "/offert" as const },
-          { icon: ShoppingBag, title: "Produkter", text: "Smarta hem-paket och elprodukter.", to: "/butik" as const },
+          { icon: ShoppingBag, title: "Plejd-kampanj", text: "Smarta hem-paket installerat och klart.", to: "/plejd-kampanj" as const },
         ].map(({ icon: Icon, ...c }) => (
           <Link key={c.to} to={c.to} className="group rounded-xl border bg-card p-6 shadow-card transition hover:-translate-y-0.5">
             <Icon className="h-6 w-6 text-primary" />
