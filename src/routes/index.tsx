@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, CalendarCheck, FileText, ShoppingBag, Phone, Mail, Award, ShieldCheck, GraduationCap, LockKeyhole } from "lucide-react";
+import { ArrowRight, FileText, ShoppingBag, Phone, Mail, Award, ShieldCheck, GraduationCap, LockKeyhole } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SERVICES } from "@/lib/services";
 import hero from "@/assets/tabyel-servicebil-startsida.jpg";
@@ -60,9 +60,8 @@ function Index() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl gap-4 px-4 py-12 md:grid-cols-3">
+      <section className="mx-auto grid max-w-6xl gap-4 px-4 py-12 md:grid-cols-2">
         {[
-          { icon: CalendarCheck, title: "Enkel bokning", text: "Välj tjänst och dag – klart på en minut.", to: "/boka" as const },
           { icon: FileText, title: "Offertförfrågan", text: "Beskriv projektet, få ett kostnadsförslag.", to: "/offert" as const },
           { icon: ShoppingBag, title: "Plejd-kampanj", text: "Smarta hem-paket installerat och klart.", to: "/plejd-kampanj" as const },
         ].map(({ icon: Icon, ...c }) => (
