@@ -10,7 +10,8 @@ export type Article = {
   sources: { label: string; url: string }[];
 };
 
-const safetySource = { label: "Elsäkerhetsverket – elsäkerhet i hemmet", url: "https://www.elsakerhetsverket.se/privatpersoner/" };
+const safetySource = { label: "Elsäkerhetsverket – kontroll av elanläggningen", url: "https://www.elsakerhetsverket.se/privatpersoner/din-elanlaggning/kontrollera-din-elanlaggning/checklista-for-kontroll-av-elanlaggning/" };
+const permittedWorkSource = { label: "Elsäkerhetsverket – vad får jag göra själv med el?", url: "https://www.elsakerhetsverket.se/privatpersoner/detta-far-du-gora-sjalv-med-el/vad-far-jag-gora-sjalv-med-el/" };
 
 export const ARTICLES: Article[] = [
   {
@@ -79,7 +80,7 @@ export const ARTICLES: Article[] = [
       { title: "Smarta lampor eller installerade styrmoduler?", paragraphs: ["En smart lampa med rätt sockel kan ofta ersätta en vanlig, utbytbar ljuskälla utan ingrepp i den fasta installationen. Följ tillverkarens anvisningar om hubb, nätverk och eventuell dimmer. En smart lampa ska inte automatiskt kombineras med en befintlig dimmer.", "Styrmoduler som byggs in bakom strömbrytare eller i andra delar av installationen behöver korrekt inkoppling och lämpligt utrymme. Låt elektrikern bedöma kompatibilitet, belastning och installation; öppna inte dosorna för att installera moduler själv."] },
       { title: "Planera ett Plejd-system som passar hemmet", paragraphs: ["Plejd kan användas för bland annat dimring, scheman och scenarier, beroende på vilka produkter som installeras. Elektrikern väljer moduler som passar armaturer och ljuskällor och hjälper till med inställningarna.", "Appstyrning hemma är inte samma sak som styrning på distans. För Plejds fjärrstyrning via internet krävs en kompatibel gateway och internetanslutning. Röststyrning och andra integrationer beror också på utrustning och stödda tjänster; kontrollera vilka funktioner som ingår i just ditt upplägg."] },
       { title: "Installation, inställningar och överlämning", paragraphs: ["Efter installationen bör dimring, knappar och önskade scenarier testas. Be om information om hur åtkomst delas i hushållet och hur systemet hanteras om du byter telefon eller bostadsägare.", "TäbyEl hjälper till med smarta hem och Plejd i Täby och Stockholmsområdet. Berätta vilka rum och lampor du vill styra så kan vi diskutera en lösning utifrån dina befintliga installationer."] },
-    ], sources: [safetySource, { label: "Plejd – produkter och system", url: "https://www.plejd.com/sv-se" }],
+    ], sources: [permittedWorkSource, { label: "Plejd – Gateway och fjärrstyrning", url: "https://www.plejd.com/sv-se/produkter/gwy-01" }],
   },
   {
     slug: "elektriker-installera-taklampa",
@@ -93,6 +94,6 @@ export const ARTICLES: Article[] = [
       { title: "DCL och äldre lamputtag", paragraphs: ["DCL är en standard för anslutning av lampor och används i nyare installationer. Äldre uttag kan ha en annan typ av lamppropp. Att kontakterna ser olika ut betyder inte att man ska bygga om anslutningen på egen hand.", "Kontrollera vilken anslutning lampan är avsedd för. Ett nytt eller flyttat lamputtag är en ändring av den fasta installationen och ska utföras av ett elinstallationsföretag. Be om hjälp om du är osäker på hur en äldre lampa ska anslutas säkert."] },
       { title: "Fast anslutning kräver en särskild bedömning", paragraphs: ["Reglerna skiljer mellan att ansluta en propp, att byta viss befintlig utrustning och att ändra installationen. Elsäkerhetsverket beskriver begränsade arbeten som privatpersoner får göra med tillräcklig kunskap, däribland vissa byten av fast anslutna ljusarmaturer i torra bostadsutrymmen.", "Det är inte ett generellt tillstånd att koppla in varje taklampa. Nya ledningar, nya anslutningspunkter, våtrum och osäkra skyddsförhållanden kräver en annan bedömning. Låt ett registrerat företag utföra arbetet om förutsättningarna eller din kunskap inte räcker."] },
       { title: "När lönar det sig att ta hjälp?", paragraphs: ["Ta hjälp när lampan är tung, installationen är äldre eller när du vill kombinera den med dimmer, spotlights eller smart styrning. Elektrikern kan kontrollera både anslutningen och kompatibiliteten.", "TäbyEl hjälper till med belysning och elinstallationer i Täby och Stockholm. Skicka gärna en bild av lampan och det befintliga uttaget tillsammans med din förfrågan, utan att öppna installationen för att fotografera."] },
-    ], sources: [safetySource],
+    ], sources: [permittedWorkSource, { label: "Elsäkerhetsverket – DCL-uttag och stickproppar", url: "https://www.elsakerhetsverket.se/privatpersoner/dina-elprodukter/produkter/stickproppar-och-uttag/dcl-uttag-och-stickproppar/" }],
   },
 ];
