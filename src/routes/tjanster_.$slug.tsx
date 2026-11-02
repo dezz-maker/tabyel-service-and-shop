@@ -3,6 +3,21 @@ import { CheckCircle2, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SERVICES } from "@/lib/services";
 import { SERVICE_DETAILS } from "@/lib/service-details";
+import imgEl from "@/assets/services/elinstallationer.jpg.asset.json";
+import imgSmart from "@/assets/services/smarta-hem.jpg.asset.json";
+import imgKontor from "@/assets/services/kontorsanpassning.jpg.asset.json";
+import imgCentral from "@/assets/services/elcentral.jpg";
+import imgLadd from "@/assets/services/laddbox.jpg";
+import imgFel from "@/assets/services/felsokning.jpg";
+
+const IMAGES: Record<string, string> = {
+  elinstallationer: imgEl.url,
+  "smarta-hem": imgSmart.url,
+  kontorsanpassning: imgKontor.url,
+  elcentral: imgCentral,
+  laddbox: imgLadd,
+  felsokning: imgFel,
+};
 
 export const Route = createFileRoute("/tjanster_/$slug")({
   loader: ({ params }) => {
@@ -66,6 +81,9 @@ function ServicePage() {
 
       <section className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-[3fr_2fr]">
         <div className="space-y-4 text-lg leading-relaxed">
+          {IMAGES[service.slug] && (
+            <img src={IMAGES[service.slug]} alt={service.title} width={1600} height={900} className="mb-6 aspect-video w-full rounded-2xl object-cover" />
+          )}
           {detail.intro.map((p) => <p key={p}>{p}</p>)}
         </div>
         <div className="rounded-2xl border bg-card p-6">
