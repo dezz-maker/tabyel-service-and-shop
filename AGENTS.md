@@ -14,3 +14,4 @@
 - Company FAQ answers are shared through one data module and a reusable section across the FAQ, About and Contact pages. Why: company information stays consistent when answers change.
 - Service image mappings live in a shared browser-safe module for overview cards and detail pages, with card overrides when needed. Why: service photography remains consistent without duplicate imports.
 - Mobile overflow navigation uses native details/summary disclosure rather than Radix DropdownMenu. Why: avoid the preview's split React dispatcher crash when newly optimized dropdown dependencies load.
+- Editorial articles live in one browser-safe data module with separate overview and unnested detail routes. Why: keep article content, sources, service links and per-article metadata consistent.

@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ArtiklarRouteImport } from './routes/artiklar'
 import { Route as BokaRouteImport } from './routes/boka'
 import { Route as ButikRouteImport } from './routes/butik'
 import { Route as FaqRouteImport } from './routes/faq'
@@ -19,12 +20,18 @@ import { Route as OmOssRouteImport } from './routes/om-oss'
 import { Route as PlejdKampanjRouteImport } from './routes/plejd-kampanj'
 import { Route as RotGronTeknikRouteImport } from './routes/rot-gron-teknik'
 import { Route as TjansterRouteImport } from './routes/tjanster'
+import { Route as ArtiklarSlugRouteImport } from './routes/artiklar_.$slug'
 import { Route as ProductHandleRouteImport } from './routes/product.$handle'
 import { Route as TjansterSlugRouteImport } from './routes/tjanster_.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArtiklarRoute = ArtiklarRouteImport.update({
+  id: '/artiklar',
+  path: '/artiklar',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BokaRoute = BokaRouteImport.update({
@@ -72,6 +79,11 @@ const TjansterRoute = TjansterRouteImport.update({
   path: '/tjanster',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ArtiklarSlugRoute = ArtiklarSlugRouteImport.update({
+  id: '/artiklar_/$slug',
+  path: '/artiklar/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProductHandleRoute = ProductHandleRouteImport.update({
   id: '/product/$handle',
   path: '/product/$handle',
@@ -85,6 +97,7 @@ const TjansterSlugRoute = TjansterSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/artiklar': typeof ArtiklarRoute
   '/boka': typeof BokaRoute
   '/butik': typeof ButikRoute
   '/faq': typeof FaqRoute
@@ -94,11 +107,13 @@ export interface FileRoutesByFullPath {
   '/plejd-kampanj': typeof PlejdKampanjRoute
   '/rot-gron-teknik': typeof RotGronTeknikRoute
   '/tjanster': typeof TjansterRoute
+  '/artiklar/$slug': typeof ArtiklarSlugRoute
   '/product/$handle': typeof ProductHandleRoute
   '/tjanster/$slug': typeof TjansterSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/artiklar': typeof ArtiklarRoute
   '/boka': typeof BokaRoute
   '/butik': typeof ButikRoute
   '/faq': typeof FaqRoute
@@ -108,12 +123,14 @@ export interface FileRoutesByTo {
   '/plejd-kampanj': typeof PlejdKampanjRoute
   '/rot-gron-teknik': typeof RotGronTeknikRoute
   '/tjanster': typeof TjansterRoute
+  '/artiklar/$slug': typeof ArtiklarSlugRoute
   '/product/$handle': typeof ProductHandleRoute
   '/tjanster/$slug': typeof TjansterSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/artiklar': typeof ArtiklarRoute
   '/boka': typeof BokaRoute
   '/butik': typeof ButikRoute
   '/faq': typeof FaqRoute
@@ -123,6 +140,7 @@ export interface FileRoutesById {
   '/plejd-kampanj': typeof PlejdKampanjRoute
   '/rot-gron-teknik': typeof RotGronTeknikRoute
   '/tjanster': typeof TjansterRoute
+  '/artiklar_/$slug': typeof ArtiklarSlugRoute
   '/product/$handle': typeof ProductHandleRoute
   '/tjanster_/$slug': typeof TjansterSlugRoute
 }
@@ -130,6 +148,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/artiklar'
     | '/boka'
     | '/butik'
     | '/faq'
@@ -139,11 +158,13 @@ export interface FileRouteTypes {
     | '/plejd-kampanj'
     | '/rot-gron-teknik'
     | '/tjanster'
+    | '/artiklar/$slug'
     | '/product/$handle'
     | '/tjanster/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/artiklar'
     | '/boka'
     | '/butik'
     | '/faq'
@@ -153,11 +174,13 @@ export interface FileRouteTypes {
     | '/plejd-kampanj'
     | '/rot-gron-teknik'
     | '/tjanster'
+    | '/artiklar/$slug'
     | '/product/$handle'
     | '/tjanster/$slug'
   id:
     | '__root__'
     | '/'
+    | '/artiklar'
     | '/boka'
     | '/butik'
     | '/faq'
@@ -167,12 +190,14 @@ export interface FileRouteTypes {
     | '/plejd-kampanj'
     | '/rot-gron-teknik'
     | '/tjanster'
+    | '/artiklar_/$slug'
     | '/product/$handle'
     | '/tjanster_/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ArtiklarRoute: typeof ArtiklarRoute
   BokaRoute: typeof BokaRoute
   ButikRoute: typeof ButikRoute
   FaqRoute: typeof FaqRoute
@@ -182,6 +207,7 @@ export interface RootRouteChildren {
   PlejdKampanjRoute: typeof PlejdKampanjRoute
   RotGronTeknikRoute: typeof RotGronTeknikRoute
   TjansterRoute: typeof TjansterRoute
+  ArtiklarSlugRoute: typeof ArtiklarSlugRoute
   ProductHandleRoute: typeof ProductHandleRoute
   TjansterSlugRoute: typeof TjansterSlugRoute
 }
@@ -193,6 +219,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/artiklar': {
+      id: '/artiklar'
+      path: '/artiklar'
+      fullPath: '/artiklar'
+      preLoaderRoute: typeof ArtiklarRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/boka': {
@@ -258,6 +291,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TjansterRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/artiklar_/$slug': {
+      id: '/artiklar_/$slug'
+      path: '/artiklar/$slug'
+      fullPath: '/artiklar/$slug'
+      preLoaderRoute: typeof ArtiklarSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/product/$handle': {
       id: '/product/$handle'
       path: '/product/$handle'
@@ -277,6 +317,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ArtiklarRoute: ArtiklarRoute,
   BokaRoute: BokaRoute,
   ButikRoute: ButikRoute,
   FaqRoute: FaqRoute,
@@ -286,6 +327,7 @@ const rootRouteChildren: RootRouteChildren = {
   PlejdKampanjRoute: PlejdKampanjRoute,
   RotGronTeknikRoute: RotGronTeknikRoute,
   TjansterRoute: TjansterRoute,
+  ArtiklarSlugRoute: ArtiklarSlugRoute,
   ProductHandleRoute: ProductHandleRoute,
   TjansterSlugRoute: TjansterSlugRoute,
 }
