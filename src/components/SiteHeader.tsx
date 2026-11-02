@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 
 const nav = [
   { to: "/tjanster", label: "Tjänster" },
+  { to: "/plejd-kampanj", label: "Plejd-kampanj" },
   { to: "/butik", label: "Butik" },
   { to: "/rot-gron-teknik", label: "ROT & Grön teknik" },
   { to: "/offert", label: "Offert" },
