@@ -7,12 +7,11 @@ const nav = [
   { to: "/tjanster", label: "Tjänster" },
   { to: "/plejd-kampanj", label: "Plejd-kampanj" },
   { to: "/om-oss", label: "Om oss" },
-  { to: "/rot-gron-teknik", label: "ROT & Grön teknik" },
   { to: "/faq", label: "FAQ" },
   { to: "/kontakt", label: "Kontakt" },
 ] as const;
 
-const mobileMenuPaths = new Set<string>(["/rot-gron-teknik", "/faq", "/plejd-kampanj"]);
+const mobileMenuPaths = new Set<string>(["/faq", "/plejd-kampanj"]);
 
 export function SiteHeader() {
   return (
