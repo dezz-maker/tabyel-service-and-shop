@@ -89,4 +89,56 @@ export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
       { q: "Kan ni arbeta kvällstid?", a: "Ja, vid behov kan vi planera arbetet utanför kontorstid." },
     ],
   },
+  "belysning-spotlights": {
+    seoTitle: "Belysning & spotlights – Elektriker i Täby & Stockholm",
+    description: "Installation av spotlights, LED-belysning och utomhusbelysning. Behörig elektriker i Täby och Stockholm. ROT-avdrag på arbetet.",
+    intro: [
+      "Rätt belysning gör stor skillnad för hur ett hem eller en lokal upplevs. Vi hjälper dig planera och installera belysning som är både vacker, funktionell och energisnål.",
+      "Vi installerar infällda spotlights, LED-list, pendlar och utomhusbelysning – gärna med dimmer eller smart styrning.",
+    ],
+    includes: ["Infällda spotlights i tak", "LED-belysning och LED-list", "Dimmer och smart styrning", "Fasad- och trädgårdsbelysning", "Belysningsplanering"],
+    faq: [
+      { q: "Kan man sätta spotlights i alla tak?", a: "I de flesta fall ja. Vi kontrollerar takets konstruktion och föreslår rätt lösning." },
+      { q: "Får jag ROT-avdrag?", a: "Ja, på arbetskostnaden när arbetet utförs i ditt hem." },
+    ],
+  },
+  "strombrytare-uttag": {
+    seoTitle: "Strömbrytare & eluttag – Installation och byte | TäbyEl",
+    description: "Byte, flytt och installation av eluttag och strömbrytare. Behörig elektriker i Täby och Stockholm.",
+    intro: [
+      "För få uttag eller gamla strömbrytare? Vi installerar nya, flyttar befintliga och byter ut slitna uttag och brytare – snabbt och säkert.",
+      "Vi hjälper även till med USB-uttag, jordade uttag och utomhusuttag.",
+    ],
+    includes: ["Nya och flyttade eluttag", "Byte av strömbrytare", "Jordade uttag", "USB-uttag", "Utomhusuttag"],
+    faq: [
+      { q: "Får jag byta uttag själv?", a: "Enklare byten av befintliga uttag är tillåtet för privatpersoner, men nya uttag och dragningar ska göras av behörig elektriker." },
+      { q: "Hur lång tid tar det?", a: "Ett par nya uttag går oftast att fixa på några timmar." },
+    ],
+  },
+  golvvarme: {
+    seoTitle: "Elektrisk golvvärme – Installation i Täby & Stockholm",
+    description: "Installation av elektrisk golvvärme i badrum, kök och hall, med termostat och smart styrning. Behörig elektriker.",
+    intro: [
+      "Golvvärme ger en jämn och skön värme och är perfekt i badrum, kök och hall. Vi installerar och ansluter elektrisk golvvärme vid renovering eller nybygge.",
+      "Med en modern termostat kan du styra värmen efter dina vanor och spara energi.",
+    ],
+    includes: ["Installation av golvvärmekabel och matta", "Anslutning och termostat", "Smart styrning via app", "Felsökning av befintlig golvvärme"],
+    faq: [
+      { q: "Kan golvvärme läggas under alla golv?", a: "Under klinker, trä och laminat finns lösningar. Vi hjälper dig välja rätt." },
+      { q: "När ska elektrikern komma in?", a: "Tidigt i renoveringen, innan golvet läggs, så att allt kan planeras rätt." },
+    ],
+  },
+  "elinstallation-badrum": {
+    seoTitle: "Elinstallation i badrum – Säker el i våtrum | TäbyEl",
+    description: "Elinstallation vid badrumsrenovering: belysning, uttag, golvvärme och handdukstork enligt reglerna för våtrum.",
+    intro: [
+      "I badrum och andra våtrum gäller särskilda regler för el. Vi ser till att installationen blir säker och följer gällande standarder.",
+      "Vi samarbetar gärna med din plattsättare eller byggare så att elen planeras rätt från början.",
+    ],
+    includes: ["Belysning och spotlights i badrum", "Uttag och jordfelsbrytare", "Golvvärme", "Elektrisk handdukstork", "Belysta speglar och spegelskåp"],
+    faq: [
+      { q: "Varför behövs elektriker i badrum?", a: "Våtrum har skärpta krav på säkerhet och placering av el. Fel kan bli farligt." },
+      { q: "Får jag ROT-avdrag?", a: "Ja, på arbetskostnaden vid badrumsrenovering i ditt hem." },
+    ],
+  },
 };

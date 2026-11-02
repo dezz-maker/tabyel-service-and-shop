@@ -9,6 +9,10 @@ import imgKontor from "@/assets/services/kontorsanpassning.jpg.asset.json";
 import imgCentral from "@/assets/services/elcentral.jpg";
 import imgLadd from "@/assets/services/laddbox.jpg";
 import imgFel from "@/assets/services/felsokning.jpg";
+import imgBelys from "@/assets/services/belysning.jpg";
+import imgUttag from "@/assets/services/uttag.jpg";
+import imgGolv from "@/assets/services/golvvarme.jpg";
+import imgBad from "@/assets/services/badrum.jpg";
 
 const IMAGES: Record<string, string> = {
   elinstallationer: imgEl.url,
@@ -17,6 +21,10 @@ const IMAGES: Record<string, string> = {
   elcentral: imgCentral,
   laddbox: imgLadd,
   felsokning: imgFel,
+  "belysning-spotlights": imgBelys,
+  "strombrytare-uttag": imgUttag,
+  golvvarme: imgGolv,
+  "elinstallation-badrum": imgBad,
 };
 
 export const Route = createFileRoute("/tjanster_/$slug")({
