@@ -25,8 +25,7 @@ function Services() {
             <h2 className="text-xl font-semibold">{s.title}</h2>
             <p className="mt-2 flex-1 text-muted-foreground">{s.text}</p>
             <div className="mt-5 flex gap-2">
-              <Button asChild variant="spark" size="sm"><Link to="/boka" search={{ tjanst: s.title }}>Boka</Link></Button>
-              <Button asChild variant="outline" size="sm"><Link to="/offert" search={{ tjanst: s.title }}>Begär offert</Link></Button>
+              <Button asChild variant="spark" size="sm"><Link to="/offert" search={{ tjanst: s.title }}>Begär offert</Link></Button>
             </div>
           </div>
         ))}
