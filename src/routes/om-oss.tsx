@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { CompanyFaq } from "@/components/CompanyFaq";
 import team from "@/assets/about_team.jpg.asset.json";
-import van from "@/assets/about_van.png.asset.json";
+import van from "@/assets/tabyel-servicebil-proffsig.jpg";
 import work1 from "@/assets/about_work1.jpg.asset.json";
 import elcentral from "@/assets/about_elcentral.jpg.asset.json";
 import work2 from "@/assets/about_work2.jpeg.asset.json";
@@ -69,7 +69,7 @@ function About() {
           <p>Vårt dedikerade team av erfarna elektriker strävar alltid efter att leverera högkvalitativ service till varje projekt vi tar oss an. Vi är specialiserade på allt från mindre reparationer och underhåll till stora om- och tillbyggnadsprojekt och installationer för nyproduktion.</p>
           <p>Oavsett om det är att byta ut en ljusbrytare i ditt hem eller att installera ett komplett elsystem för ett företag, kan du lita på oss för att göra jobbet med precision och noggrannhet.</p>
         </div>
-        <img src={van.url} alt="TäbyEl servicebil på väg" width={1400} height={875} loading="lazy" className="w-full rounded-2xl" />
+        <img src={van} alt="TäbyEls vita servicebil med företagets blå och orange logga" width={1056} height={624} loading="lazy" className="w-full rounded-2xl" />
       </section>
 
       <section className="mx-auto max-w-6xl px-4 pb-16">
