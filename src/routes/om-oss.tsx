@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
+import { CompanyFaq } from "@/components/CompanyFaq";
 import team from "@/assets/about_team.jpg.asset.json";
 import van from "@/assets/about_van.png.asset.json";
 import work1 from "@/assets/about_work1.jpg.asset.json";
@@ -104,6 +105,8 @@ function About() {
           </div>
         </div>
       </section>
+
+      <CompanyFaq />
 
       <section className="bg-primary text-primary-foreground">
         <div className="mx-auto max-w-4xl px-4 py-14 text-center">
