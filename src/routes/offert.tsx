@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { RequestForm } from "@/components/RequestForm";
 
 export const Route = createFileRoute("/offert")({
-  validateSearch: (s: Record<string, unknown>) => ({ tjanst: typeof s.tjanst === "string" ? s.tjanst : undefined }),
+  validateSearch: (s: Record<string, unknown>): { tjanst?: string } => (typeof s["tjanst"] === "string" ? { tjanst: s["tjanst"] } : {}),
   head: () => ({
     meta: [
       { title: "Begär offert – TäbyEl" },

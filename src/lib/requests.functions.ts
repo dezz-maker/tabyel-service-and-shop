@@ -19,7 +19,7 @@ const requestSchema = z.object({
 export type ServiceRequestInput = z.infer<typeof requestSchema>;
 
 export const submitServiceRequest = createServerFn({ method: "POST" })
-  .inputValidator((input: unknown) => requestSchema.parse(input))
+  .validator((input: unknown) => requestSchema.parse(input))
   .handler(async ({ data }) => {
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
     const { error } = await supabaseAdmin.from("service_requests").insert({

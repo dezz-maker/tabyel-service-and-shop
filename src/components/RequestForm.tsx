@@ -9,7 +9,7 @@ import { submitServiceRequest } from "@/lib/requests.functions";
 
 const TIMES = ["Förmiddag (8–12)", "Eftermiddag (12–17)", "Flexibel"];
 
-export function RequestForm({ type, defaultService }: { type: "booking" | "quote"; defaultService?: string }) {
+export function RequestForm({ type, defaultService }: { type: "booking" | "quote"; defaultService?: string | undefined }) {
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
   const today = new Date().toISOString().slice(0, 10);
 
