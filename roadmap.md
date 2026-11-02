@@ -3,3 +3,5 @@
 - [x] Byt bilden för Elcentral & säkringar under Tjänster till den redigerade bilden utan flagga och med TäbyEl-loggan på ryggen.
 - [x] Använd den förbättrade servicebilsbilden på alla sidor där den gamla förekommer.
 - [x] Skapa sex SEO-artiklar med elsäkerhetsråd, källor och en länkad artikelöversikt.
+- [ ] Skicka kontakt-, boknings- och offertformulär till info@tabyel.se och leah.l@tabyel.se efter verifierad mejlinställning.
+- [ ] Fortsätt anslutning av tabyel.se när användaren är redo att ändra domäninställningarna.
