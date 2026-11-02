@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Zap } from "lucide-react";
+import logo from "@/assets/tabyel_logo.png.asset.json";
 import { CartDrawer } from "./CartDrawer";
 import { Button } from "@/components/ui/button";
 
@@ -14,11 +14,8 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-6 px-4">
-        <Link to="/" className="flex items-center gap-2 font-display text-xl font-bold">
-          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-spark text-spark-foreground">
-            <Zap className="h-5 w-5" />
-          </span>
-          TäbyEl
+        <Link to="/" className="flex items-center" aria-label="TäbyEl – startsida">
+          <img src={logo.url} alt="TäbyEl – AB Täby Elinstallationer" width={600} height={281} className="h-11 w-auto" />
         </Link>
         <nav className="ml-auto hidden items-center gap-6 text-sm font-medium md:flex">
           {nav.map((n) => (
