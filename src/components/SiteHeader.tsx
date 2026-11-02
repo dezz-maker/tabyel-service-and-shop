@@ -7,7 +7,6 @@ const nav = [
   { to: "/plejd-kampanj", label: "Plejd-kampanj" },
   { to: "/om-oss", label: "Om oss" },
   { to: "/rot-gron-teknik", label: "ROT & Grön teknik" },
-  { to: "/offert", label: "Offert" },
   { to: "/kontakt", label: "Kontakt" },
 ] as const;
 
@@ -56,7 +55,6 @@ export function SiteFooter() {
         </div>
         <div className="flex flex-col gap-2 text-sm">
           <Link to="/boka" className="hover:underline">Boka tid</Link>
-          <Link to="/offert" className="hover:underline">Begär offert</Link>
           <Link to="/om-oss" className="hover:underline">Om oss</Link>
           <Link to="/kontakt" className="hover:underline">Kontakt</Link>
         </div>
