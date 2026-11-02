@@ -78,6 +78,7 @@ export function SiteFooter() {
           <Link to="/boka" className="hover:underline">Boka tid</Link>
           <Link to="/om-oss" className="hover:underline">Om oss</Link>
           <Link to="/kontakt" className="hover:underline">Kontakt</Link>
+          <Link to="/rot-gron-teknik" className="hover:underline">ROT & Grön teknik</Link>
           <Link to="/artiklar" className="hover:underline">Elkunskap</Link>
         </div>
       </div>
