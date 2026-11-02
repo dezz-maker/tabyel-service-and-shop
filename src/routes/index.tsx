@@ -30,8 +30,8 @@ function Index() {
               Behöriga elektriker för hem, BRF och företag – från små reparationer till kompletta installationer.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button asChild variant="spark" size="lg"><Link to="/boka">Boka tid <ArrowRight /></Link></Button>
-              <Button asChild variant="inkOutline" size="lg"><Link to="/offert">Begär offert</Link></Button>
+              <Button asChild variant="spark" size="lg"><Link to="/boka">Boka elektriker <ArrowRight /></Link></Button>
+              <Button asChild variant="inkOutline" size="lg"><Link to="/tjanster">Våra tjänster</Link></Button>
             </div>
           </div>
           <img src={hero} alt="Elektriker arbetar i elcentral" width={1600} height={1008} className="aspect-[4/3] w-full rounded-2xl object-cover" />
