@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, CalendarCheck, FileText, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SERVICES } from "@/lib/services";
-import hero from "@/assets/hero-electrician-tabyel.jpg";
+import hero from "@/assets/tabyel-servicebil-startsida.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -34,7 +34,7 @@ function Index() {
               <Button asChild variant="inkOutline" size="lg"><Link to="/tjanster">Våra tjänster</Link></Button>
             </div>
           </div>
-          <img src={hero} alt="Elektriker arbetar i elcentral" width={1600} height={1008} className="aspect-[4/3] w-full rounded-2xl object-cover" />
+          <img src={hero} alt="TäbyEls vita servicebil med blå och orange logga" width={1600} height={1200} className="aspect-[4/3] w-full rounded-2xl object-cover" />
         </div>
       </section>
 
