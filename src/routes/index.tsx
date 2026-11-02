@@ -62,9 +62,9 @@ function Index() {
 
       <section className="mx-auto grid max-w-6xl gap-4 px-4 py-12 md:grid-cols-3">
         {[
-          { icon: ShieldCheck, title: "Elsäkerhet & tips", text: "Råd och kunskap för ett elsäkert hem.", to: "/artiklar" as const },
           { icon: FileText, title: "Offertförfrågan", text: "Beskriv projektet, få ett kostnadsförslag.", to: "/offert" as const },
           { icon: ShoppingBag, title: "Plejd-kampanj", text: "Smarta hem-paket installerat och klart.", to: "/plejd-kampanj" as const },
+          { icon: ShieldCheck, title: "Elsäkerhet & tips", text: "Råd och kunskap för ett elsäkert hem.", to: "/artiklar" as const },
         ].map(({ icon: Icon, ...c }) => (
           <Link key={c.to} to={c.to} className="group rounded-xl border bg-card p-6 shadow-card transition hover:-translate-y-0.5">
             <Icon className="h-6 w-6 text-primary" />
