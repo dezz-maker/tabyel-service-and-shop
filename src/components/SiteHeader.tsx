@@ -7,6 +7,7 @@ const nav = [
   { to: "/tjanster", label: "Tjänster" },
   { to: "/butik", label: "Butik" },
   { to: "/offert", label: "Offert" },
+  { to: "/kontakt", label: "Kontakt" },
 ] as const;
 
 export function SiteHeader() {
@@ -60,6 +61,7 @@ export function SiteFooter() {
           <Link to="/boka" className="hover:underline">Boka tid</Link>
           <Link to="/offert" className="hover:underline">Begär offert</Link>
           <Link to="/butik" className="hover:underline">Butik</Link>
+          <Link to="/kontakt" className="hover:underline">Kontakt</Link>
         </div>
       </div>
     </footer>
