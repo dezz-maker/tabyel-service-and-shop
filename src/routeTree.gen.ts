@@ -17,6 +17,7 @@ import { Route as OffertRouteImport } from './routes/offert'
 import { Route as RotGronTeknikRouteImport } from './routes/rot-gron-teknik'
 import { Route as TjansterRouteImport } from './routes/tjanster'
 import { Route as ProductHandleRouteImport } from './routes/product.$handle'
+import { Route as TjansterSlugRouteImport } from './routes/tjanster_.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -58,6 +59,11 @@ const ProductHandleRoute = ProductHandleRouteImport.update({
   path: '/product/$handle',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TjansterSlugRoute = TjansterSlugRouteImport.update({
+  id: '/tjanster_/$slug',
+  path: '/tjanster/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -68,6 +74,7 @@ export interface FileRoutesByFullPath {
   '/rot-gron-teknik': typeof RotGronTeknikRoute
   '/tjanster': typeof TjansterRoute
   '/product/$handle': typeof ProductHandleRoute
+  '/tjanster/$slug': typeof TjansterSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -78,6 +85,7 @@ export interface FileRoutesByTo {
   '/rot-gron-teknik': typeof RotGronTeknikRoute
   '/tjanster': typeof TjansterRoute
   '/product/$handle': typeof ProductHandleRoute
+  '/tjanster/$slug': typeof TjansterSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -89,6 +97,7 @@ export interface FileRoutesById {
   '/rot-gron-teknik': typeof RotGronTeknikRoute
   '/tjanster': typeof TjansterRoute
   '/product/$handle': typeof ProductHandleRoute
+  '/tjanster_/$slug': typeof TjansterSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -101,6 +110,7 @@ export interface FileRouteTypes {
     | '/rot-gron-teknik'
     | '/tjanster'
     | '/product/$handle'
+    | '/tjanster/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -111,6 +121,7 @@ export interface FileRouteTypes {
     | '/rot-gron-teknik'
     | '/tjanster'
     | '/product/$handle'
+    | '/tjanster/$slug'
   id:
     | '__root__'
     | '/'
@@ -121,6 +132,7 @@ export interface FileRouteTypes {
     | '/rot-gron-teknik'
     | '/tjanster'
     | '/product/$handle'
+    | '/tjanster_/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -132,6 +144,7 @@ export interface RootRouteChildren {
   RotGronTeknikRoute: typeof RotGronTeknikRoute
   TjansterRoute: typeof TjansterRoute
   ProductHandleRoute: typeof ProductHandleRoute
+  TjansterSlugRoute: typeof TjansterSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -192,6 +205,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductHandleRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/tjanster_/$slug': {
+      id: '/tjanster_/$slug'
+      path: '/tjanster/$slug'
+      fullPath: '/tjanster/$slug'
+      preLoaderRoute: typeof TjansterSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -204,6 +224,7 @@ const rootRouteChildren: RootRouteChildren = {
   RotGronTeknikRoute: RotGronTeknikRoute,
   TjansterRoute: TjansterRoute,
   ProductHandleRoute: ProductHandleRoute,
+  TjansterSlugRoute: TjansterSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
