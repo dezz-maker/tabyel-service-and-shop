@@ -26,8 +26,9 @@ export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
     seoTitle: "Smarta hem med Plejd – Installation i Täby & Stockholm",
     description: "Installation av Plejd smarta hem. Styr belysning och scenarier från mobilen, med knappar eller röst. Behörig elektriker i Täby och Stockholm.",
     intro: [
-      "Med Plejd kan du styra belysningen i hela hemmet från mobilen, med befintliga strömbrytare eller med rösten. Skapa scenarier för morgon, kväll och semester – och spara energi på köpet.",
-      "Vi installerar Plejd-puckar, dimmers och tillbehör och ser till att allt är uppsatt och klart när vi går.",
+      "Vi hjälper dig att ta ditt hem till nästa nivå med smarta hem-lösningar från Plejd. Med våra certifierade elektriker får du en smidig och säker installation av Plejd-produkter som ger dig full kontroll över belysning och andra funktioner direkt från mobilen, surfplattan eller via röststyrning.",
+      "Plejd är ett flexibelt och användarvänligt system som passar både nya installationer och uppgraderingar av befintliga elsystem. Med möjligheter som scenarion, schemaläggning och trådlös styrning kan vi skapa en lösning som är anpassad efter dina behov och din vardag.",
+      "Låt oss hjälpa dig att göra ditt hem mer energieffektivt, bekvämt och modernt. Kontakta oss för en offert eller mer information om hur vi kan hjälpa dig att integrera Plejd i ditt smarta hem!",
     ],
     includes: ["Installation av Plejd-puckar och dimmers", "Inställning av appen och scenarier", "Styrning av belysning och uttag", "Tidsstyrning och närvarosimulering", "Färdiga Plejd-paket till kampanjpris"],
     faq: [
@@ -78,8 +79,9 @@ export const SERVICE_DETAILS: Record<string, ServiceDetail> = {
     seoTitle: "Kontorsanpassning & el för lokaler – TäbyEl",
     description: "El och belysning vid om- och tillbyggnad av kontor och lokaler. TäbyEl hjälper företag i Täby och Stockholm.",
     intro: [
-      "Ska ni flytta, bygga om eller anpassa en lokal? Vi hjälper företag med allt elarbete – från planering till färdig installation.",
-      "Vi samarbetar gärna med byggare och fastighetsägare och ser till att projektet blir klart i tid.",
+      "Vi erbjuder skräddarsydda elinstallationer för kontorsanpassningar, oavsett om det handlar om nybyggnation, ombyggnation eller modernisering av befintliga lokaler. Våra certifierade elektriker ser till att ditt kontor får ett elsystem som är funktionellt, energieffektivt och anpassat efter din verksamhet.",
+      "Vi hjälper till med allt från installation av belysning och eluttag till nätverkslösningar, laddstationer och smarta system för belysningsstyrning och energihantering. Tillsammans skapar vi en arbetsmiljö som är både bekväm och framtidssäkrad för medarbetare och besökare.",
+      "Med fokus på kvalitet och säkerhet ser vi till att varje projekt genomförs i tid och enligt gällande standarder. Kontakta oss för rådgivning eller en offert för att diskutera dina behov av kontorsanpassning!",
     ],
     includes: ["El vid om- och tillbyggnad", "Belysning för kontor och butik", "Uttag och kanalisation för arbetsplatser", "Nätverk och data", "Service och underhåll av lokaler"],
     faq: [
