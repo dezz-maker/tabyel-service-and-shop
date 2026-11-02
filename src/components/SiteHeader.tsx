@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import logo from "@/assets/tabyel_logo.png.asset.json";
 import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
 
 const nav = [
   { to: "/tjanster", label: "Tjänster" },
@@ -10,6 +11,8 @@ const nav = [
   { to: "/faq", label: "FAQ" },
   { to: "/kontakt", label: "Kontakt" },
 ] as const;
+
+const mobileMenuPaths = new Set<string>(["/rot-gron-teknik", "/faq", "/plejd-kampanj"]);
 
 export function SiteHeader() {
   return (
@@ -31,12 +34,29 @@ export function SiteHeader() {
           </Button>
         </div>
       </div>
-      <nav className="flex justify-center gap-6 border-t py-2 text-sm md:hidden">
-        {nav.map((n) => (
-          <Link key={n.to} to={n.to} className="text-muted-foreground">
+      <nav aria-label="Mobilmeny" className="flex items-center justify-center gap-6 border-t px-4 py-2 text-sm md:hidden">
+        {nav.filter((n) => !mobileMenuPaths.has(n.to)).map((n) => (
+          <Link key={n.to} to={n.to} className="text-muted-foreground hover:text-foreground" activeProps={{ className: "text-foreground" }}>
             {n.label}
           </Link>
         ))}
+        <details className="group relative shrink-0" onKeyDown={(event) => {
+          if (event.key === "Escape") {
+            event.currentTarget.removeAttribute("open");
+            event.currentTarget.querySelector("summary")?.focus();
+          }
+        }} onBlur={(event) => {
+          if (!event.currentTarget.contains(event.relatedTarget)) event.currentTarget.removeAttribute("open");
+        }}>
+          <summary aria-label="Fler sidor" title="Fler sidor" className="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-md hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring [&::-webkit-details-marker]:hidden">
+              <Menu className="h-5 w-5" />
+          </summary>
+          <div className="absolute right-0 top-full z-50 mt-1 w-52 rounded-md border bg-popover p-1 text-popover-foreground shadow-card">
+            {nav.filter((n) => mobileMenuPaths.has(n.to)).map((n) => (
+              <Link key={n.to} to={n.to} onClick={(event) => event.currentTarget.closest("details")?.removeAttribute("open")} className="flex min-h-11 items-center rounded-sm px-3 py-2 hover:bg-accent focus-visible:bg-accent focus-visible:outline-none">{n.label}</Link>
+            ))}
+          </div>
+        </details>
       </nav>
     </header>
   );
