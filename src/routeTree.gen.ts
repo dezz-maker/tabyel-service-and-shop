@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BokaRouteImport } from './routes/boka'
 import { Route as ButikRouteImport } from './routes/butik'
+import { Route as FaqRouteImport } from './routes/faq'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as OffertRouteImport } from './routes/offert'
 import { Route as OmOssRouteImport } from './routes/om-oss'
@@ -34,6 +35,11 @@ const BokaRoute = BokaRouteImport.update({
 const ButikRoute = ButikRouteImport.update({
   id: '/butik',
   path: '/butik',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
 const KontaktRoute = KontaktRouteImport.update({
@@ -81,6 +87,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/boka': typeof BokaRoute
   '/butik': typeof ButikRoute
+  '/faq': typeof FaqRoute
   '/kontakt': typeof KontaktRoute
   '/offert': typeof OffertRoute
   '/om-oss': typeof OmOssRoute
@@ -94,6 +101,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/boka': typeof BokaRoute
   '/butik': typeof ButikRoute
+  '/faq': typeof FaqRoute
   '/kontakt': typeof KontaktRoute
   '/offert': typeof OffertRoute
   '/om-oss': typeof OmOssRoute
@@ -108,6 +116,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/boka': typeof BokaRoute
   '/butik': typeof ButikRoute
+  '/faq': typeof FaqRoute
   '/kontakt': typeof KontaktRoute
   '/offert': typeof OffertRoute
   '/om-oss': typeof OmOssRoute
@@ -123,6 +132,7 @@ export interface FileRouteTypes {
     | '/'
     | '/boka'
     | '/butik'
+    | '/faq'
     | '/kontakt'
     | '/offert'
     | '/om-oss'
@@ -136,6 +146,7 @@ export interface FileRouteTypes {
     | '/'
     | '/boka'
     | '/butik'
+    | '/faq'
     | '/kontakt'
     | '/offert'
     | '/om-oss'
@@ -149,6 +160,7 @@ export interface FileRouteTypes {
     | '/'
     | '/boka'
     | '/butik'
+    | '/faq'
     | '/kontakt'
     | '/offert'
     | '/om-oss'
@@ -163,6 +175,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BokaRoute: typeof BokaRoute
   ButikRoute: typeof ButikRoute
+  FaqRoute: typeof FaqRoute
   KontaktRoute: typeof KontaktRoute
   OffertRoute: typeof OffertRoute
   OmOssRoute: typeof OmOssRoute
@@ -194,6 +207,13 @@ declare module '@tanstack/react-router' {
       path: '/butik'
       fullPath: '/butik'
       preLoaderRoute: typeof ButikRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/kontakt': {
@@ -259,6 +279,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BokaRoute: BokaRoute,
   ButikRoute: ButikRoute,
+  FaqRoute: FaqRoute,
   KontaktRoute: KontaktRoute,
   OffertRoute: OffertRoute,
   OmOssRoute: OmOssRoute,
