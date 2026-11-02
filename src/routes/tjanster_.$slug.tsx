@@ -13,6 +13,8 @@ import imgBelys from "@/assets/services/belysning.jpg";
 import imgUttag from "@/assets/services/uttag.jpg";
 import imgGolv from "@/assets/services/golvvarme.jpg";
 import imgBad from "@/assets/services/badrum.jpg";
+import teslaCharger from "@/assets/laddbox-tesla.png.asset.json";
+import chargerInstallation from "@/assets/laddbox-installation.png.asset.json";
 
 const IMAGES: Record<string, string> = {
   elinstallationer: imgEl.url,
@@ -103,6 +105,15 @@ function ServicePage() {
           </ul>
         </div>
       </section>
+
+      {service.slug === "laddbox" && (
+        <section aria-label="Bilder på elbilsladdare" className="mx-auto max-w-6xl px-4 pb-14">
+          <div className="grid gap-6 sm:grid-cols-2">
+            <img src={teslaCharger.url} alt="Tesla laddbox monterad på tegelfasad med laddkabel" width={768} height={768} loading="lazy" className="aspect-square w-full rounded-lg object-contain" />
+            <img src={chargerInstallation.url} alt="Elektriker kontrollerar två installerade elbilsladdare med mobilen" width={768} height={768} loading="lazy" className="aspect-square w-full rounded-lg object-contain" />
+          </div>
+        </section>
+      )}
 
       <section className="bg-muted/50">
         <div className="mx-auto max-w-6xl px-4 py-14">
